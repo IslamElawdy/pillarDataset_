@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 from autowert_synthcars.coco.validate_coco import print_report, validate_coco_file
+from autowert_synthcars.coco.visualize_coco import visualize
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -45,6 +46,11 @@ def run_validate(args):
         raise SystemExit(1)
 
 
+def run_visualize(args):
+    written = visualize(args.coco_json, args.image_dir, args.output_dir, args.limit)
+    print(f"Wrote {written} preview images to {args.output_dir}")
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description="AutoWert synthetic COCO dataset generator")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -61,6 +67,13 @@ def main(argv=None):
     validate = sub.add_parser("validate", help="Validate a COCO JSON file")
     validate.add_argument("coco_json")
     validate.set_defaults(func=run_validate)
+
+    preview = sub.add_parser("visualize", help="Create overlay preview images from COCO annotations")
+    preview.add_argument("coco_json")
+    preview.add_argument("image_dir")
+    preview.add_argument("output_dir")
+    preview.add_argument("--limit", type=int, default=50)
+    preview.set_defaults(func=run_visualize)
 
     args = parser.parse_args(argv)
     args.func(args)
