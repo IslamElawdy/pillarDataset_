@@ -1,0 +1,38 @@
+camera:
+  azimuth_deg: [-160, 160]
+  elevation_deg: [5, 28]
+  distance_m: [7.0, 14.0]
+  focal_length_mm: [28, 55]
+  side_view_probability: 0.70
+  three_quarter_probability: 0.25
+  front_rear_probability: 0.05
+
+lighting:
+  sun_energy: [0.5, 5.0]
+  sun_angle_deg: [3, 35]
+  world_strength: [0.25, 1.4]
+  add_area_lights_probability: 0.35
+
+vehicle:
+  body_colors:
+    - [0.95, 0.95, 0.92]
+    - [0.02, 0.02, 0.02]
+    - [0.6, 0.62, 0.65]
+    - [0.8, 0.05, 0.03]
+    - [0.02, 0.10, 0.45]
+    - [0.15, 0.35, 0.15]
+  roughness: [0.18, 0.65]
+  metallic: [0.0, 0.6]
+
+environment:
+  ground_size_m: 40
+  ground_colors:
+    - [0.35, 0.35, 0.35]
+    - [0.18, 0.18, 0.18]
+    - [0.45, 0.42, 0.38]
+
+image_effects:
+  # Applied in future post-processing stage.
+  noise_probability: 0.25
+  blur_probability: 0.15
+  exposure_jitter: [-0.25, 0.25]
