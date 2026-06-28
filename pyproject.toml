@@ -27,3 +27,5 @@ autowert-synthcars = "autowert_synthcars.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["autowert_synthcars*"]
+namespaces = true
