@@ -1,0 +1,22 @@
+target_images: 50000
+
+split:
+  strategy: by_vehicle_model
+  train: 0.80
+  valid: 0.10
+  test: 0.10
+
+filters:
+  min_instance_area_px: 100
+  min_visible_fraction: 0.05
+  discard_empty_images: true
+  allow_truncated_objects: true
+
+procedural_fallback:
+  enabled: true
+  vehicle_types:
+    - sedan
+    - wagon
+    - suv
+    - coupe
+    - van
