@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Blender
+*.blend1
+*.blend2
+*.blend@
+*.tmp
+
+# Generated datasets and assets
+output/
+assets/vehicles_raw/*
+!assets/vehicles_raw/README_put_vehicle_models_here.md
+assets/vehicles_tagged/*
+!assets/vehicles_tagged/README.md
+assets/hdri/*
+!assets/hdri/.gitkeep
+assets/backgrounds/*
+!assets/backgrounds/.gitkeep
+assets/ground_materials/*
+!assets/ground_materials/.gitkeep
+assets/distractors/*
+!assets/distractors/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
