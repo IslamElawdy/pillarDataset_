@@ -1,0 +1,13 @@
+assets:
+  vehicles_raw: assets/vehicles_raw
+  vehicles_tagged: assets/vehicles_tagged
+  hdri: assets/hdri
+  backgrounds: assets/backgrounds
+  ground_materials: assets/ground_materials
+  distractors: assets/distractors
+
+output:
+  root: output
+  coco_dataset: output/coco_dataset
+  previews: output/previews
+  logs: output/logs
