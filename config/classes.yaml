@@ -1,0 +1,51 @@
+classes:
+  - id: 1
+    name: pillar
+    supercategory: structure
+    enabled: true
+    color: [255, 0, 128]
+  - id: 2
+    name: windshield
+    supercategory: glass
+    enabled: true
+    color: [0, 200, 200]
+  - id: 3
+    name: side_window
+    supercategory: glass
+    enabled: true
+    color: [0, 120, 255]
+  - id: 4
+    name: rear_window
+    supercategory: glass
+    enabled: true
+    color: [150, 80, 220]
+  - id: 5
+    name: quarter_glass
+    supercategory: glass
+    enabled: true
+    color: [80, 180, 40]
+  - id: 6
+    name: exterior_mirror
+    supercategory: vehicle_part
+    enabled: true
+    color: [245, 180, 0]
+  - id: 7
+    name: headlight
+    supercategory: light
+    enabled: true
+    color: [255, 120, 0]
+  - id: 8
+    name: taillight
+    supercategory: light
+    enabled: true
+    color: [255, 0, 0]
+  - id: 9
+    name: wheel
+    supercategory: vehicle_part
+    enabled: true
+    color: [0, 80, 255]
+  - id: 10
+    name: door_handle
+    supercategory: vehicle_part
+    enabled: false
+    color: [0, 150, 150]
