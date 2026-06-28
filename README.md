@@ -1,8 +1,8 @@
 # AutoWert Pillar Synthetic Dataset Generator
 
-Synthetic dataset generator for AutoWert vehicle-pillar instance segmentation.
+Synthetic Blender-based dataset generator for AutoWert vehicle-pillar instance segmentation.
 
-The project creates Blender-rendered RGB images and COCO Instance Segmentation annotations for training RF-DETR-Seg / RT-DETR-style instance-segmentation models for vehicle structural-part detection.
+The project creates RGB images and COCO Instance Segmentation annotations for training RF-DETR-Seg / RT-DETR-style instance-segmentation models for vehicle structural-part detection.
 
 ## Target classes
 
@@ -59,6 +59,7 @@ python -m venv .venv
 source .venv/bin/activate  # Linux
 # .venv\Scripts\activate  # Windows
 pip install -r requirements.txt
+pip install -e .
 ```
 
 ### 2. Install Blender
@@ -80,25 +81,25 @@ http://127.0.0.1:8080
 ### 4. Generate a small demo dataset without vehicle models
 
 ```bash
-python -m autowert_synthcars.cli render-demo --images 20 --output output/coco_dataset
+autowert-synthcars render-demo --images 20 --output output/coco_dataset
 ```
 
 If `blender` is not on PATH:
 
 ```bash
-python -m autowert_synthcars.cli render-demo --images 20 --output output/coco_dataset --blender "C:/Program Files/Blender Foundation/Blender 4.2/blender.exe"
+autowert-synthcars render-demo --images 20 --output output/coco_dataset --blender "C:/Program Files/Blender Foundation/Blender 4.2/blender.exe"
 ```
 
 ### 5. Validate COCO annotations
 
 ```bash
-python -m autowert_synthcars.cli validate output/coco_dataset/train/_annotations.coco.json
+autowert-synthcars validate output/coco_dataset/train/_annotations.coco.json
 ```
 
 ### 6. Create preview overlays
 
 ```bash
-python -m autowert_synthcars.cli visualize output/coco_dataset/train/_annotations.coco.json output/coco_dataset/train output/previews/train
+autowert-synthcars visualize output/coco_dataset/train/_annotations.coco.json output/coco_dataset/train output/previews/train
 ```
 
 ## Current implementation status
@@ -109,14 +110,17 @@ Implemented in this initial version:
 - COCO class mapping
 - Blender headless orchestration
 - Procedural vehicle fallback with labeled parts
-- RGB rendering
-- Segmentation mask rendering via per-instance object pass colors
+- RGB rendering in Eevee, Cycles, or mixed mode
 - COCO instance annotation writer
 - Train/valid/test split
 - COCO validator
 - Overlay visualization tool
 - FastAPI + plain HTML/CSS/JavaScript UI
 - Windows/Linux launch scripts
+
+Current technical limitation:
+
+- The procedural fallback currently exports rectangle-style projected polygons from object bounds. This is enough to validate the complete pipeline and start experiments, but the next implementation step should replace this with real per-pixel object-color/Cryptomatte masks for production-quality instance segmentation.
 
 Not included:
 
