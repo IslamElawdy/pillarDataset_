@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoWert Dataset UI</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>AutoWert Dataset UI</h1>
+    <p>Blender-basierte synthetische COCO-Datensatzerzeugung.</p>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Status</h2>
+      <button id="statusBtn">Status prüfen</button>
+      <pre id="statusBox">Noch nicht geprüft.</pre>
+    </section>
+    <section class="card">
+      <h2>Klassen</h2>
+      <ol>
+        <li>pillar</li>
+        <li>windshield</li>
+        <li>side_window</li>
+        <li>rear_window</li>
+        <li>quarter_glass</li>
+        <li>exterior_mirror</li>
+        <li>headlight</li>
+        <li>taillight</li>
+        <li>wheel</li>
+      </ol>
+    </section>
+    <section class="card">
+      <h2>CLI Start</h2>
+      <code>autowert-synthcars render-demo --images 20 --output output/coco_dataset</code>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
