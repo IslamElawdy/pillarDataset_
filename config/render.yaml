@@ -1,0 +1,27 @@
+resolution:
+  width: 1920
+  height: 1080
+
+engine_mix:
+  eevee: 0.80
+  cycles: 0.20
+
+cycles:
+  samples: 64
+  denoise: true
+  device: GPU
+
+eevee:
+  temporal_samples: 64
+  use_gtao: true
+
+output:
+  image_format: jpg
+  jpg_quality: 95
+  save_instance_masks: false
+  save_preview_overlays: true
+
+mask:
+  mode: object_color
+  # object_color is the robust initial implementation.
+  # It renders class/instance materials to a flat color mask and extracts per-instance masks.
